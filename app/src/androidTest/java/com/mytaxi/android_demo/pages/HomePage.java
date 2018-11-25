@@ -1,6 +1,9 @@
 package com.mytaxi.android_demo.pages;
 
+import android.app.Instrumentation;
+import android.support.test.InstrumentationRegistry;
 import android.support.test.rule.ActivityTestRule;
+import android.support.test.uiautomator.UiDevice;
 import android.util.Log;
 
 import com.mytaxi.android_demo.R;
@@ -14,6 +17,7 @@ import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.RootMatchers.withDecorView;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static android.support.test.espresso.matcher.ViewMatchers.isRoot;
 import static android.support.test.espresso.matcher.ViewMatchers.withContentDescription;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
@@ -28,10 +32,11 @@ public class HomePage extends BasePage {
     String TAG = "Home page";
     ActivityTestRule mActivityTestRule;
 
-    public HomePage(ActivityTestRule activityTestRule){
+    public HomePage(ActivityTestRule activityTestRule) {
         mActivityTestRule = activityTestRule;
     }
-    public void searchAndTapDriver(String searchQuery, String driverName){
+
+    public void searchAndTapDriver(String searchQuery, String driverName) {
         //assertHomePageOpened();
         Log.d(TAG, "Type driver name query in edit text");
         setTextInAutoComplete(searchQuery);
@@ -43,20 +48,27 @@ public class HomePage extends BasePage {
 
     /**
      * This function is used to set text in auto complete text view
+     *
      * @param searchQuery search query to be set in auto complete
      **/
-    public void setTextInAutoComplete(String searchQuery){
-        Log.d(TAG, "Setting text "+searchQuery+" in auto complete text view");
+    public void setTextInAutoComplete(String searchQuery) {
+        Log.d(TAG, "Setting text " + searchQuery + " in auto complete text view");
         onView(withId(R.id.textSearch)).perform(click());
         onView(withId(R.id.textSearch)).perform(typeText(searchQuery));
     }
 
-    public void logOut(){
+    public void logOut() {
         Log.d(TAG, "Tapping hamburger button");
         onView(withContentDescription(R.string.navigation_drawer_open)).perform(click());
-        Utils.pressBack();
-        Utils.wait(1);
+        UiDevice mDevice = UiDevice.getInstance(InstrumentationRegistry.getInstrumentation());
+        mDevice.pressBack();
+        try {
+            mDevice.wait(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         onView(withContentDescription(R.string.navigation_drawer_open)).perform(click());
         Log.d(TAG, "Tapping logout button");
         onView(withText(R.string.text_item_title_logout)).perform(click());
+    }
 }
