@@ -20,7 +20,7 @@ jobs:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
           name: Setup emulator
-          command: sdkmanager "system-images;android-27;default;x86" && echo "no" | avdmanager create avd -n test -k "system-images;android-27;default;x86;armeabi-v7a"
+          command: sdkmanager "system-images;android-27;default;x86" && echo "no" | avdmanager create avd -n test -k "system-images;android-27;default;x86"
       - run:
           name: Launch emulator
           command: export ANDROID_SDK_ROOT=/opt/android/sdk; export LD_LIBRARY_PATH=/opt/android/sdk/emulator/lib64:/opt/android/sdk/emulator/lib64/qt/lib && emulator64-x86 -avd test -noaudio -no-boot-anim -no-window -accel auto -verbose
