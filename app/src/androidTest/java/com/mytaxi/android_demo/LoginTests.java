@@ -66,10 +66,10 @@ public class LoginTests extends BaseTest {
         authenticationPage.assertLoginPageOpened();
     }
 
-    //*
-     * This testcase will verify invalid login scenario
-     * Test ID:04
-     //*
+
+      /*This testcase will verify invalid login scenario
+      Test ID:04*/
+
     @Test
     public void verifyInvalidLogin() throws Exception {
         authenticationPage.login("Fakeuser", "12345");
@@ -77,9 +77,10 @@ public class LoginTests extends BaseTest {
         homePage.assertHomePageNotOpened();
     }
 
-    //**
-     * This function will execute after each test cases. Can be used to clear memory/resources.
-     * **//*
+
+      /*This function will execute after each test cases.
+      Can be used to clear memory/resources.*/
+
     @After
     public void tearDown() throws Exception{
         //will check current running test name, so that we can run tear down for specific tests
