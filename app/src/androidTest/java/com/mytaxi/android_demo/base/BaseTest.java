@@ -16,6 +16,7 @@ import com.mytaxi.android_demo.activities.MainActivity;
 import com.mytaxi.android_demo.activities.MainActivity_MembersInjector;
 import com.mytaxi.android_demo.pages.AuthenticationPage;
 import com.mytaxi.android_demo.pages.BasePage;
+import com.mytaxi.android_demo.pages.HomePage;
 //import com.mytaxi.android_demo.pages.DriverDetailsPage;
 //import com.mytaxi.android_demo.pages.HomePage;
 //import com.mytaxi.android_demo.rules.RetryActivityTestRule;
@@ -37,7 +38,7 @@ public class BaseTest {
     @Rule public TestName currentTestName = new TestName();
 
     public AuthenticationPage authenticationPage = new AuthenticationPage();
-    //public HomePage homePage = new HomePage(mActivityRule);
+    public HomePage homePage = new HomePage(mActivityRule);
     //public DriverDetailsPage driverDetailsPage = new DriverDetailsPage();
 
     /**

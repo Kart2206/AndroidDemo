@@ -58,18 +58,18 @@ public class LoginTests extends BaseTest {
      * This testcase will verify logout
      * Test ID:03
      * **/
-    /*@Test
+    @Test
     public void verifyLogout() throws Exception {
         authenticationPage.login(user.getUsername(), user.getPassword());
-        homePage.assertHomePageOpened();
+        //homePage.assertHomePageOpened();
         homePage.logOut();
         authenticationPage.assertLoginPageOpened();
     }
 
-    *//**
+    //*
      * This testcase will verify invalid login scenario
      * Test ID:04
-     * **//*
+     //*
     @Test
     public void verifyInvalidLogin() throws Exception {
         authenticationPage.login("Fakeuser", "12345");
@@ -77,7 +77,7 @@ public class LoginTests extends BaseTest {
         homePage.assertHomePageNotOpened();
     }
 
-    *//**
+    //**
      * This function will execute after each test cases. Can be used to clear memory/resources.
      * **//*
     @After
@@ -91,6 +91,5 @@ public class LoginTests extends BaseTest {
                 homePage.logOut();*//*
         }
     }
-*/
 
 }
