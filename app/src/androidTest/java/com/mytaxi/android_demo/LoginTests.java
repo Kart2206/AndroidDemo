@@ -27,6 +27,7 @@ public class LoginTests extends BaseTest {
     @Before
     public void setUp() throws Exception{
         allowPermissionsIfNeeded();
+        Intents.init();
         /*if(homepage.ifhomepageOpened()){
             homepage.logout;
         }*/
@@ -59,8 +60,7 @@ public class LoginTests extends BaseTest {
     public void verifyLogin() throws Exception {
         User user = new User ("crazydog335","venture");
         authenticationPage.login(user.getUsername(), user.getPassword());
-        Intents.init();
-        wait(2000);
+        Thread.sleep(2000);
         intended(hasComponent(MainActivity.class.getName()));
 
 
