@@ -19,6 +19,9 @@ jobs:
             - ~/.gradle
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
+          name: Change Permissions
+          command: sudo chmod +x gradlew
+      - run:
             name: Build debug APK and release APK
             command: |
                   ./gradlew :app:assembleDebug
