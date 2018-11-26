@@ -1,11 +1,15 @@
 package com.mytaxi.android_demo;
 
 import android.content.Intent;
+import android.support.test.espresso.intent.Intents;
 import android.util.Log;
 
+import com.mytaxi.android_demo.activities.MainActivity;
 import com.mytaxi.android_demo.base.BaseTest;
 import com.mytaxi.android_demo.model.User;
+import static android.support.test.espresso.intent.Intents.intended;
 
+import static android.support.test.espresso.intent.matcher.IntentMatchers.hasComponent;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -55,8 +59,9 @@ public class LoginTests extends BaseTest {
     public void verifyLogin() throws Exception {
         User user = new User ("crazydog335","venture");
         authenticationPage.login(user.getUsername(), user.getPassword());
-        wait(2000);
-        homePage.dashboard();
+        Intents.init();
+        intended(hasComponent(MainActivity.class.getName()));
+
 
     }
 

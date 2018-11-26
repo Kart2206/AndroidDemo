@@ -21,6 +21,9 @@ import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.isEnabled;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static android.support.test.espresso.intent.Intents.intended;
+
+import static android.support.test.espresso.intent.matcher.IntentMatchers.hasComponent;
 import android.support.test.uiautomator.UiDevice;
 import android.support.test.espresso.ViewInteraction;
 import static org.hamcrest.core.AllOf.allOf;
@@ -37,7 +40,7 @@ public class AuthenticationPage extends BasePage{
      * This funtion is to verify if login page is launched
      */
 
-    @Test
+
     public boolean ifAuthenticationPageLaunched(){
 
          //if(onView((withId(R.id.btn_login)).check(matches(isDisplayed()))));

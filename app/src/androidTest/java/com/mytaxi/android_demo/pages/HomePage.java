@@ -38,6 +38,7 @@ public class HomePage extends BasePage {
     }
 
     public void dashboard(){
+        onView(withText("mytaxi demo"));
         onView(withText("mytaxi demo")).check((ViewAssertion) isDisplayed());
     }
 
