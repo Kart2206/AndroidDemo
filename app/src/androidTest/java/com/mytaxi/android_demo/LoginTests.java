@@ -60,6 +60,7 @@ public class LoginTests extends BaseTest {
         User user = new User ("crazydog335","venture");
         authenticationPage.login(user.getUsername(), user.getPassword());
         Intents.init();
+        wait(2000);
         intended(hasComponent(MainActivity.class.getName()));
 
 
