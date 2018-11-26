@@ -7,6 +7,7 @@ import com.mytaxi.android_demo.base.BaseTest;
 import com.mytaxi.android_demo.model.User;
 
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.After;
@@ -52,9 +53,11 @@ public class LoginTests extends BaseTest {
      * **/
     @Test
     public void verifyLogin() throws Exception {
-        User user = new User ("carzydog335","venture");
+        User user = new User ("crazydog335","venture");
         authenticationPage.login(user.getUsername(), user.getPassword());
-        //homePage.assertHomePageOpened();
+        wait(2000);
+        homePage.dashboard();
+
     }
 
     /**

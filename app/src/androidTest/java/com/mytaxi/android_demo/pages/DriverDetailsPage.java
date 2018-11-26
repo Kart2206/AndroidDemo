@@ -17,6 +17,7 @@ import java.text.SimpleDateFormat;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
+import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
@@ -41,12 +42,13 @@ public class DriverDetailsPage extends BasePage {
         Log.d(TAG, "Verifying driver date");
         onView(withId(R.id.textViewDriverDate)).check(matches(withText(new SimpleDateFormat("yyyy-MM-dd").format(driver.getRegisteredDate()))));
 
-        /*Log.d(TAG, "Verifying location icon set properly");
-        onView(withId(R.id.imageViewDriverLocation)).check(matches(EspressoMatchers.withDrawable(R.drawable.ic_location)));
+        Log.d(TAG,"driverLocation is displayed");
+        onView(withId(R.id.imageViewDriverLocation)).check(matches(isDisplayed()));
 
         Log.d(TAG, "Verifying date icon set properly");
-        onView(withId(R.id.imageViewDriverDate)).check(matches(EspressoMatchers.withDrawable(R.drawable.ic_date)));
-*/
+        onView(withId(R.id.imageViewDriverDate)).check(matches(isDisplayed()));
+
+
     }
 
     /**

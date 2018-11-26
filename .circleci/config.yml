@@ -4,7 +4,7 @@ jobs:
     working_directory: ~/code
     docker:
       # Android the primary container
-      - image: circleci/android:api-27-node8-alpha
+      - image: circleci/android:api-28-alpha
     environment:
       JVM_OPTS: -Xmx3200m
     steps:
@@ -19,20 +19,30 @@ jobs:
             - ~/.gradle
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
-          name: Setup emulator
-          command: sdkmanager "system-images;android-27;default;x86" && echo "no" | avdmanager create avd -n test -k "system-images;android-27;default;x86"
-      - run:
-          name: Launch emulator
-          command:  export LD_LIBRARY_PATH=${ANDROID_HOME}/emulator/lib64:/opt/android/sdk/emulator/lib64/qt/lib && emulator64-x86 -avd test -noaudio -no-boot-anim -no-window -accel auto -verbose
-          background: true
-      - run:
-          name: Wait emulator
-          command: |
-            # wait for it to have booted
-            circle-android wait-for-boot
-            # unlock the emulator screen
-            sleep 30
-            adb shell input keyevent 82
+                name: Build debug APK and release APK
+                command: |
+                  ./gradlew :app:assembleDebug
+                  ./gradlew :app:assembleDebugAndroidTest
+            - run:
+                name: Store Google Service Account
+                command: echo $GCLOUD_SERVICE_KEY > ${HOME}/gcloud-service-key.json
+            - run:
+                name: Authorize gcloud and set config defaults
+                command: |
+                  sudo gcloud auth activate-service-account --key-file=${HOME}/gcloud-service-key.json
+                  sudo gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
+            - run:
+                name: Test with Firebase Test Lab
+                command: >
+                  sudo gcloud firebase test android run --type instrumentation
+                    --app app/build/outputs/apk/debug/app-debug.apk
+                    --test app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk
+                    --results-bucket cloud-test-${GOOGLE_PROJECT_ID}
+            - run:
+                name: Install gsutil dependency and copy test results data
+                command: |
+                  sudo pip install -U crcmod
+                  sudo gsutil -m cp -r -U `sudo gsutil ls gs://[BUCKET_NAME]/[OBJECT_NAME] | tail -1` ${CIRCLE_ARTIFACTS}/ | true
       - run:
           name: Run EspressoTests
           command: ./gradlew connectedAndroidTest

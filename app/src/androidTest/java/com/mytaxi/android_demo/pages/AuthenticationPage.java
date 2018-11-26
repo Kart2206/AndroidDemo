@@ -71,7 +71,9 @@ public class AuthenticationPage extends BasePage{
      **/
     public void setTextInUserNameField(String userName){
         Log.d(TAG, "Setting text "+userName+" in username field");
+        onView(withId(R.id.edt_username)).check(matches(isDisplayed()));
         onView(withId(R.id.edt_username)).perform(typeText(userName));
+
     }
 
     /**
@@ -80,6 +82,7 @@ public class AuthenticationPage extends BasePage{
      **/
     public void setTextInPasswordField(String password){
         Log.d(TAG, "Setting text "+password+" in password field");
+        onView(withId(R.id.edt_username)).check(matches(isDisplayed()));
         onView(withId(R.id.edt_password)).perform(typeText(password));
     }
 

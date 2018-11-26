@@ -2,6 +2,7 @@ package com.mytaxi.android_demo.pages;
 
 import android.app.Instrumentation;
 import android.support.test.InstrumentationRegistry;
+import android.support.test.espresso.ViewAssertion;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.uiautomator.UiDevice;
 import android.util.Log;
@@ -36,6 +37,10 @@ public class HomePage extends BasePage {
         mActivityTestRule = activityTestRule;
     }
 
+    public void dashboard(){
+        onView(withText("mytaxi demo")).check((ViewAssertion) isDisplayed());
+    }
+
     public void searchAndTapDriver(String searchQuery, String driverName) {
         //assertHomePageOpened();
         Log.d(TAG, "Type driver name query in edit text");
@@ -62,11 +67,7 @@ public class HomePage extends BasePage {
         onView(withContentDescription(R.string.navigation_drawer_open)).perform(click());
         UiDevice mDevice = UiDevice.getInstance(InstrumentationRegistry.getInstrumentation());
         mDevice.pressBack();
-        try {
-            mDevice.wait(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
         onView(withContentDescription(R.string.navigation_drawer_open)).perform(click());
         Log.d(TAG, "Tapping logout button");
         onView(withText(R.string.text_item_title_logout)).perform(click());
