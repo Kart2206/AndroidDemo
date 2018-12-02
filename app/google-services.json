@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "704512929764",
+    "firebase_url": "https://emulator-5cbfd.firebaseio.com",
+    "project_id": "emulator-5cbfd",
+    "storage_bucket": "emulator-5cbfd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:704512929764:android:9fd89781260796b5",
+        "android_client_info": {
+          "package_name": "com.mytaxi.android_demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "704512929764-qmo6i45dpah6vdrl55u321c8q7qp3i7m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBmsUJ2sZcO2M6XiDV8YXKgTOStqSfL28"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
