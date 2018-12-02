@@ -1,19 +1,42 @@
 {
-  
-  "type": "service_account",
-   "project_info": {
+  "project_info": {
     "project_number": "704512929764",
     "firebase_url": "https://emulator-5cbfd.firebaseio.com",
     "project_id": "emulator-5cbfd",
     "storage_bucket": "emulator-5cbfd.appspot.com"
-  }
- // "project_id": "emulator-5cbfd",
-  "private_key_id": "cf6880b4de4794bf618a51b48922e489d87d3944",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDQHkoacQkBcJb/\naZ5L5DezVXrnZ6qBXiQywECJwhmr30TewZS5sN/mGnd6JmAHxtPRe9dcbq3azRMH\nULmd2JORHk91D8sIVd67yLNnPc8QGrwdtb8vkBvqfl175P0dHYa0jZ3aiPlilfRs\nfJpIyW2f+lw5wS6jXxqxG7Xh5R4BVfhltqp5RgUbzCUa2ZCwAk4yEmjfCSEOOsLG\nzjZrnh1triwfblmepKqsE8mtmSBZVweEaBPjuaTp+v6wuzZwHdxW/rRxHfx6VPBX\nbVtgE6UIKckVXDj4h/AZHFyBS4tivGzbeefcttsRqcs6cBQJxTuBXujgc7mcGS3n\nRP22hix3AgMBAAECggEAP/BWVupMWH9lPKIPyoQaYsPLxyVPuoAYQelTyp7x8R5e\nk8tIbIY9O339H++DSFBbCjxwbUrpqdOgWXqBFFASAh8cTTwlZfGvxOSDzZ+tKmb0\nTXJlgvDUysW45dPzuYq1NGpfyWCUsaedWOktI1iTD/fEds/1iqaw1iHLztNr1P+s\nz6xSK/dTPvduxMgtw7ac+JwU72VQMOXffaDrxOgJJCvI1hXrDIf+wetxmY8N2t9a\ns5JRknmpnzd61/94Rg5G/mBD+pid6X04veT9vvb+Si4Dyz77Ah8PJSsuXxTJHo2X\nOQZW5brB6Y3LByrunXvwn/h7DT9T9udfBQvMHFeYyQKBgQD6JKg5loFzx2aCXEEi\nsIye/iSCxk+cJRnDzfoBdXDebisW9Ul2RaFcGaVM8DTPSrUGhfxkB7aWkSBgox5r\nvtEBH/AUY1reYUPBnSnL9TmhRwkRokWGLvhMHFtwxHhyrLcc6WLI3ZFYWAas9Cga\nvpi277FXREZ4rf4HLJOavIDn2QKBgQDU/bzixBGYhBl6sO2SWzpmlMgCURJ5nHQM\naUOreCJS3+RcdnqLPkYWDQDMj7aMeRHOz4eCw4O02E2C225EFxrCtLexEukLeEcl\ncc0Q0dlEg3PH3fT1DdMJZs6yTYn6sbOWG/B1EQpLIIbQk6Y8R/GXVJcBsro6sNFj\nnRotcMPUzwKBgQChZfGdZr0UJT7BMiFc7qltFPId5zMKvu2G52o+crZm7pKi95V0\n2Kyqrml34S1R6xQup1kYedmYAP/xGo7QWoikvyS7IvhIsF11maCUVx/eLeVuGVPe\npoPTKCDf/ATziPmFkBkLHdtgMzvrcIZH617B+ppkgksuJqXXny2GE8bg0QKBgHZJ\nuRZDh/YpHzFpg3dt3QBNjsrilZ0ei8C80U0wefeGyn+jeSlN24SxkgkJo3teXcp6\nrSqtRL8yBdIv5YxBPKZ30TCxbOXm1bRxAE9gDAcl7i5JEZrrI5IsG40gzQmCmVc7\niw6o+QuCM/0wkvkVh5Hg88CIry6bNp7ZCEnGP6w3AoGBAOg5KJUC6BMvoFtSRVdm\nEsmnPe/Mb6+p1THXbZdRBi4mwaX6bX8JppRRTrFCKh2lRmQpf2/WVmoJUeCZx7gc\nhWzEemehDe6aKws1RWMVc6T78vQ8Lo58La/FRyo7TejwINkI7Wa9AltVZyzAmHmd\nFL3jvdm5WQZzJG5d1tWxuudW\n-----END PRIVATE KEY-----\n",
-  "client_email": "firebase-adminsdk-hf08h@emulator-5cbfd.iam.gserviceaccount.com",
-  "client_id": "105862461542031491398",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-hf08h%40emulator-5cbfd.iam.gserviceaccount.com"
-}
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:704512929764:android:9fd89781260796b5",
+        "android_client_info": {
+          "package_name": "com.mytaxi.android_demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "704512929764-qmo6i45dpah6vdrl55u321c8q7qp3i7m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBmsUJ2sZcO2M6XiDV8YXKgTOStqSfL28"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+} 
