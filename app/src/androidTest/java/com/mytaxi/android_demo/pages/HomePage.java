@@ -1,6 +1,7 @@
 package com.mytaxi.android_demo.pages;
 
 import android.app.Instrumentation;
+import android.content.res.Resources;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.espresso.ViewAssertion;
 import android.support.test.rule.ActivityTestRule;
@@ -12,6 +13,8 @@ import com.mytaxi.android_demo.R;
 
 import junit.framework.Assert;
 
+import org.hamcrest.core.AllOf;
+
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.typeText;
@@ -22,8 +25,10 @@ import static android.support.test.espresso.matcher.ViewMatchers.isRoot;
 import static android.support.test.espresso.matcher.ViewMatchers.withContentDescription;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static org.hamcrest.CoreMatchers.allOf;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.core.IsNot.not;
+
 
 /**
  *  This class contains all the functions related to Home page
@@ -32,14 +37,26 @@ public class HomePage extends BasePage {
 
     String TAG = "Home page";
     ActivityTestRule mActivityTestRule;
+    private Resources resources;
 
     public HomePage(ActivityTestRule activityTestRule) {
         mActivityTestRule = activityTestRule;
     }
 
     public void dashboard(){
-        onView(withText("mytaxi demo"));
-        onView(withText("mytaxi demo")).check((ViewAssertion) isDisplayed());
+        resources = mActivityTestRule.getActivity().getResources();
+        try {
+            Thread.sleep(6000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        onView(allOf(withText("mytaxi demo"))).check(matches(isDisplayed()));
+        String dashboardTxt=resources.getString(R.string.app_name);
+        onView(allOf(withText("mytaxi demo"))).check(matches(withText(dashboardTxt)));
+        onView(withId(R.id.searchContainer)).check(matches(isDisplayed()));
+        Log.d(TAG,"Dashboard verified");
+
+
     }
 
     public void searchAndTapDriver(String searchQuery, String driverName) {

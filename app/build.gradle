@@ -41,6 +41,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test:rules:1.0.2'
     androidTestImplementation 'com.android.support.test.uiautomator:uiautomator-v18:2.1.2'
     implementation 'com.google.firebase:firebase-core:16.0.1'
+    implementation 'com.mcxiaoke.volley:library:1.0.19'
 }
 
 apply plugin: 'com.google.gms.google-services'

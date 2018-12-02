@@ -17,7 +17,7 @@ import com.mytaxi.android_demo.activities.MainActivity_MembersInjector;
 import com.mytaxi.android_demo.pages.AuthenticationPage;
 import com.mytaxi.android_demo.pages.BasePage;
 import com.mytaxi.android_demo.pages.HomePage;
-//import com.mytaxi.android_demo.pages.DriverDetailsPage;
+import com.mytaxi.android_demo.pages.DriverDetailsPage;
 //import com.mytaxi.android_demo.pages.HomePage;
 //import com.mytaxi.android_demo.rules.RetryActivityTestRule;
 //import com.mytaxi.android_demo.utils.Constants;
@@ -39,7 +39,7 @@ public class BaseTest {
 
     public AuthenticationPage authenticationPage = new AuthenticationPage();
     public HomePage homePage = new HomePage(mActivityRule);
-    //public DriverDetailsPage driverDetailsPage = new DriverDetailsPage();
+    public DriverDetailsPage driverDetailsPage = new DriverDetailsPage();
 
     /**
      * This will handle runtime permission dialogs
@@ -52,7 +52,7 @@ public class BaseTest {
             if (allowPermissions.exists()) {
                 try {
                     allowPermissions.click();
-                    Log.d(TAG,"allow");
+                    Log.d(TAG,"ALLOW");
                 } catch (UiObjectNotFoundException e) {
                 }
             }

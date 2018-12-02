@@ -2,6 +2,7 @@ package com.mytaxi.android_demo.model;
 
 public class User {
 
+
     private String mUsername;
     private String mPassword;
 

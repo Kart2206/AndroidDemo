@@ -1,23 +1,11 @@
 package com.mytaxi.android_demo;
 
-import android.content.Intent;
 import android.support.test.espresso.intent.Intents;
-import android.util.Log;
-
-import com.mytaxi.android_demo.activities.MainActivity;
 import com.mytaxi.android_demo.base.BaseTest;
 import com.mytaxi.android_demo.model.User;
-import static android.support.test.espresso.intent.Intents.intended;
-
-import static android.support.test.espresso.intent.matcher.IntentMatchers.hasComponent;
-
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.After;
-import org.junit.runners.Parameterized;
 
-import java.util.Arrays;
 
 public class LoginTests extends BaseTest {
 
@@ -27,7 +15,7 @@ public class LoginTests extends BaseTest {
     @Before
     public void setUp() throws Exception{
         allowPermissionsIfNeeded();
-
+        Intents.init();
         /*if(homepage.ifhomepageOpened()){
             homepage.logout;
         }*/
@@ -58,13 +46,13 @@ public class LoginTests extends BaseTest {
      * **/
     @Test
     public void verifyLogin() throws Exception {
-        User user = new User ("crazydog335","venture");
+        user = new User ("crazydog335","venture");
+        authenticationPage.usernameGen();
         authenticationPage.login(user.getUsername(), user.getPassword());
-        Thread.sleep(3000);
-        Intents.init();
-        intended(hasComponent(MainActivity.class.getName()));
-        Log.d(TAG,MainActivity.class.getName());
-        Thread.sleep(3000);
+        homePage.dashboard();
+        homePage.searchAndTapDriver("sa","Sarah Scott");
+        //driverDetailsPage.verifyDriverDetailsPage();user.getUsername(), user.getPassword()
+
 
 
     }
@@ -73,7 +61,7 @@ public class LoginTests extends BaseTest {
      * This testcase will verify logout
      * Test ID:03
      * **/
-    @Test
+    /*@Test
     public void verifyLogout() throws Exception {
         authenticationPage.login(user.getUsername(), user.getPassword());
         //homePage.assertHomePageOpened();
@@ -82,8 +70,8 @@ public class LoginTests extends BaseTest {
     }
 
 
-      /*This testcase will verify invalid login scenario
-      Test ID:04*/
+      *//*This testcase will verify invalid login scenario
+      Test ID:04*//*
 
     @Test
     public void verifyInvalidLogin() throws Exception {
@@ -93,8 +81,8 @@ public class LoginTests extends BaseTest {
     }
 
 
-      /*This function will execute after each test cases.
-      Can be used to clear memory/resources.*/
+      *//*This function will execute after each test cases.
+      Can be used to clear memory/resources.*//*
 
     @After
     public void tearDown() throws Exception{
@@ -106,6 +94,6 @@ public class LoginTests extends BaseTest {
             //*if(homePage.ifHomePageOpened())
                 homePage.logOut();
         }
-    }
+    }*/
 
 }
