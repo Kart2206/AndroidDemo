@@ -1,42 +1,12 @@
 {
-  "project_info": {
-    "project_number": "704512929764",
-    "firebase_url": "https://emulator-5cbfd.firebaseio.com",
-    "project_id": "emulator-5cbfd",
-    "storage_bucket": "emulator-5cbfd.appspot.com"
-  },
-  "client": [
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:704512929764:android:9fd89781260796b5",
-        "android_client_info": {
-          "package_name": "com.mytaxi.android_demo"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "704512929764-qmo6i45dpah6vdrl55u321c8q7qp3i7m.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDBmsUJ2sZcO2M6XiDV8YXKgTOStqSfL28"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
-        },
-        "ads_service": {
-          "status": 2
-        }
-      }
-    }
-  ],
-  "configuration_version": "1"
+  "type": "service_account",
+  "project_id": "taxi-223716",
+  "private_key_id": "55cecd4aed44d2143a221bcde54868a27b0d2e3d",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC/A0Qfwq/KaAQX\nrLqUzujkKMM5I/KBvqNOWBcwjBOsq7sFxmHiKCqLlM2vCNTihGx92468pmL0LpHS\nIWfUsu60AfqyKI8RxtJ23arD1Bs5h/tRJLDXBulOgPTlpZUK2b8+1sDlcCE5y+w6\nOlU1t24TDK7OKJvHyLyrE9NK/czDgEJceY92LDAQ3bbNF6bLkICFx+znrCjwvPOo\nvO+MWVwA2E7vpXlfd0+mZx9RgOO4pEMYm+MGjvAfR8WHQnUrgBKaLnKoEUOUrriv\nRkz2Dh1m0TeyGwQIr1ZkXyx0UrFBLWPzMUD4f7lPLK4GsRv12xVGzQG04LDt3wiV\nXvDr+aJpAgMBAAECggEAEP7iJp5MxGp1ZMLgdiGj7LsoxbKKXxt+jde+NnpcPMqp\n8SVZ68TNpk5G79pOENqeCaPJw0TdvKLRJDyHL9B890TO0N/VfQwvCVcHXPXIN1n/\nVVS5rGRHyY2lXLKbPJQr1VRH5RJRToJzwimTD9zCnUzNV/gahk/445L3w64p9EIT\nnghl/JVSvNnRLsLwFjB1YHGGUDBYLhFUzowUC3AYA+QbhSzOwLFM8HIE3mFS39EX\nPwaK7qsweC6qMyE8p0On1A1MfSzjoQh/LGxTz4M86TWNybnvzDZQ0fQZrfXTNKEK\nVl5DyBymN8nuk16ZoVEycLwsiw5Q+GnYO7saJItxVQKBgQDo3Xi0VgaCyGqNDFfa\nyd7iU0gJejDidoT5kbdYggjh9nkbV3sr8rBF6SJBiPvI/5Ctcs60Gi6odPsuwXzL\nDwdh7euF0Z69BL9iEwMUZ+HNvmdZy8PYwq5FdJlZiqxSKT6fi7uGRfbCtvJFjINb\nMgwsg9CO2qqitLg5tgYRwBHPjQKBgQDR/VnSP1CFgv1t1y1ygg88Gpl+W3bNmUoU\nrXR7G3lGLsLAePhKe8dI4XThdBbQGzsG9ojR19X8B10+ZaceX37MoQRf9ZFdLXgz\n67wrg0AgAVZdHRvNZQ82Q09DJ6kQacl5dR6k8E6rcCwrBiaNnMbJgcEuNqQHA2nW\nzedQvOtJTQKBgQDSxmRTFuqdxjproRiEeOS9hxRVP7yvvwdtvm9uNYVEwousK+rZ\nRLo5DWRsXUlKDckuthRTAL/qyrfxAkGqqtfL1EaywaIlBP8WDo9jEQRZ7lYt+To0\nIUMMqxWC7vo7BAoi75+1Ue6hIGb6fM0I5qwOPuGv7E03KMz3r8KennOAoQKBgAQ3\ndipGozNLIhOmkn8OJYgrcJGc/JG8VkR8By7BqnnCTp7WzwWP3ryT6mjsj9i180V8\nhdrQ3rck3rZ2DBkMCdvKD/BtWfHpC9TfEvQ8unjqDfXos7o4IUoRp/HNRhPSS/1o\nYKknOi0vH3Ptt7B4SXWaaWqoJjsN0n5BvDde08qxAoGAR7snfojdKcTbtQXOd70t\nTHQyHcWL+jA2H7fTkz6gaQKfJd/NBMy5xyafD1puSll0u5ZuA2uVctzU//so5x89\nBCrACoaNj9ytEKAi1SfCoQG3YhQvT1KCbQYZmZY4pvqOVpCLX9fYkoO37oYVvbBO\nrt8R35HMPwXEdKiAWsdBmFk=\n-----END PRIVATE KEY-----\n",
+  "client_email": "testservice-account1@taxi-223716.iam.gserviceaccount.com",
+  "client_id": "113270752351299316224",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/testservice-account1%40taxi-223716.iam.gserviceaccount.com"
 }
