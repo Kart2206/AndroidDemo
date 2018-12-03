@@ -42,7 +42,7 @@ public class LoginTests extends BaseTest {
 
     /**
      * This testcase will verify login
-     * Test ID:02
+     * Test ID:01
      * **/
     @Test
     public void verifyLogin() throws Exception {
@@ -51,49 +51,11 @@ public class LoginTests extends BaseTest {
         authenticationPage.login(user.getUsername(), user.getPassword());
         homePage.dashboard();
         homePage.searchAndTapDriver("sa","Sarah Scott");
-        //driverDetailsPage.verifyDriverDetailsPage();user.getUsername(), user.getPassword()
+        driverDetailsPage.verifyDriverDetailsPage();
+        driverDetailsPage.verifyCallIntent("(413) 868-2228");
 
 
 
     }
-
-    /**
-     * This testcase will verify logout
-     * Test ID:03
-     * **/
-    /*@Test
-    public void verifyLogout() throws Exception {
-        authenticationPage.login(user.getUsername(), user.getPassword());
-        //homePage.assertHomePageOpened();
-        homePage.logOut();
-        authenticationPage.assertLoginPageOpened();
-    }
-
-
-      *//*This testcase will verify invalid login scenario
-      Test ID:04*//*
-
-    @Test
-    public void verifyInvalidLogin() throws Exception {
-        authenticationPage.login("Fakeuser", "12345");
-        authenticationPage.verifyLoginFailedErrorMessage();
-        //homePage.assertHomePageNotOpened();
-    }
-
-
-      *//*This function will execute after each test cases.
-      Can be used to clear memory/resources.*//*
-
-    @After
-    public void tearDown() throws Exception{
-        //will check current running test name, so that we can run tear down for specific tests
-        if(currentTestName.getMethodName().contains("verifyLogin")){
-            //Will restart main activity and logout
-            Log.d(TAG, "Restarting Main Activity");
-            mActivityRule.launchActivity(new Intent());
-            //*if(homePage.ifHomePageOpened())
-                homePage.logOut();
-        }
-    }*/
 
 }

@@ -30,17 +30,16 @@ public class DriverDetailsPage extends BasePage {
 
     /**
      * This function is used to verify driver details page
-     * @param driver Driver details
      **/
-    public void verifyDriverDetailsPage(Driver driver) throws Exception{
+    public void verifyDriverDetailsPage() throws Exception{
         Log.d(TAG, "Verifying driver name");
-        onView(withId(R.id.textViewDriverName)).check(matches(withText(driver.getName())));
+        onView(withId(R.id.textViewDriverName)).check(matches(withText("Sarah Scott")));
 
         Log.d(TAG, "Verifying driver location");
-        onView(withId(R.id.textViewDriverLocation)).check(matches(withText(driver.getLocation())));
+        onView(withId(R.id.textViewDriverLocation)).check(matches(withText("6834 charles st")));
 
         Log.d(TAG, "Verifying driver date");
-        onView(withId(R.id.textViewDriverDate)).check(matches(withText(new SimpleDateFormat("yyyy-MM-dd").format(driver.getRegisteredDate()))));
+        onView(withId(R.id.textViewDriverDate)).check(matches(withText("2002-10-18")));
 
         Log.d(TAG,"driverLocation is displayed");
         onView(withId(R.id.imageViewDriverLocation)).check(matches(isDisplayed()));
@@ -57,9 +56,8 @@ public class DriverDetailsPage extends BasePage {
     public void verifyCallIntent(String phoneNumber){
         tapCallButton();
         UiDevice device = UiDevice.getInstance(InstrumentationRegistry.getInstrumentation());
-        String phone = phoneNumber.replace("-","");
         device.wait(Until.hasObject(By.pkg("com.android.dialer").depth(0)), 2000);
-        Assert.assertTrue(device.hasObject(By.text(phone)));
+        Assert.assertTrue(device.hasObject(By.text(phoneNumber)));
     }
 
     /**

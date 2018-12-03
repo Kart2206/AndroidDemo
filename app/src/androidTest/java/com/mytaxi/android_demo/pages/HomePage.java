@@ -1,20 +1,11 @@
 package com.mytaxi.android_demo.pages;
 
-import android.app.Instrumentation;
 import android.content.res.Resources;
 import android.support.test.InstrumentationRegistry;
-import android.support.test.espresso.ViewAssertion;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.uiautomator.UiDevice;
 import android.util.Log;
-
 import com.mytaxi.android_demo.R;
-
-
-import junit.framework.Assert;
-
-import org.hamcrest.core.AllOf;
-
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.typeText;

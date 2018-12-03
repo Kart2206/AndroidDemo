@@ -59,8 +59,6 @@ public class AuthenticationPage extends BasePage{
     public boolean ifAuthenticationPageLaunched(){
 
         boolean temp =true;
-         //if(onView((withId(R.id.btn_login)).check(matches(isDisplayed()))));
-        //onView(withText("allow")).perform(click());
         Log.d(TAG,"Test message launch");
 
         try {
@@ -84,8 +82,6 @@ public class AuthenticationPage extends BasePage{
      * This function is used to login to app
      **/
     public void login(String userName, String password){
-        //hintPassword();String userName, String password
-        //hintUsername();
         setTextInUserNameField(userName);
         setTextInPasswordField(password);
         Espresso.closeSoftKeyboard();
@@ -168,14 +164,14 @@ public class AuthenticationPage extends BasePage{
         queue.add(request);
         try {
             JSONObject response = future.get(120, TimeUnit.SECONDS);
-            Log.d("Sathish", "response" + response);
+            Log.d(TAG, "response" + response);
             JSONObject login = response.getJSONArray("results").getJSONObject(0).getJSONObject("login");
             String username = login.getString("username");
             String password = login.getString("password");
-            Log.d("Sathish", "username" + username);
-            Log.d("Sathish", "password" + password);
+            Log.d(TAG, "username" + username);
+            Log.d(TAG, "password" + password);
 
-            //Log.d("Sathish",user.getUsername()+user.getPassword());
+            //Log.d(TAG,user.getUsername()+user.getPassword());
             //authenticationPage.login(user.getUsername(), user.getPassword());
 
         } catch (JSONException e) {
