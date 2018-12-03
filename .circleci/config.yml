@@ -45,7 +45,7 @@ jobs:
             sudo gsutil -m cp -r -U `sudo gsutil ls gs://staging.emulator-5cbfd.appspot.com/Test_Results | tail -1` ${CIRCLE_ARTIFACTS}/ | true
       - run:
           name: Run EspressoTests
-          command: ./gradlew connectedAndroidTest
+          command: ./gradlew :app:connectedAndroidTest
       - store_artifacts:
           path: app/build/reports
           destination: reports
