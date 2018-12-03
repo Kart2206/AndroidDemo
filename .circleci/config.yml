@@ -33,7 +33,7 @@ jobs:
             name: Authorize gcloud and set config defaults
             command: |
               sudo gcloud auth activate-service-account --key-file=app/keys.json
-              sudo gcloud  config set project ${GOOGLE_PROJECT_ID}
+              sudo gcloud  config set project "emulator-5cbfd"
       - run:
           name: Test with Firebase Test Lab
           command: >
