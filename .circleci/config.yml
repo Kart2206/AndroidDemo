@@ -36,6 +36,9 @@ jobs:
               sudo gcloud auth activate-service-account --key-file=app/keys.json
               sudo gcloud  config set project "emulator-5cbfd"
       - run:
+            name: Creating directory to store test results
+            command: mkdir firebase
+      - run:
           name: Test with Firebase Test Lab
           command: sudo gcloud firebase test android run --type instrumentation --app app/build/outputs/apk/debug/app-debug.apk --test app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk --device model=Pixel2,version=27,locale=en,orientation=portrait --environment-variables coverage=true,coverageFile=/sdcard/coverage.ec --directories-to-pull=/sdcard --timeout 30m
           no_output_timeout: 30m
@@ -45,7 +48,7 @@ jobs:
             sudo pip install -U crcmod
             sudo gsutil -m cp -r -U `sudo gsutil ls gs://test-lab-8qiwjmj0wd43k-hr3qdwpzsvya8 | tail -1` ${CIRCLE_ARTIFACTS}/ | true
       - store_artifacts:
-          path: firebase/Pixel2-27-en_GB-portrait
+          path: firebase/
           destination: reports
       - store_test_results:
           path: firebase/Pixel2-27-en_GB-portrait
