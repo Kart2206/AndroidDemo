@@ -28,7 +28,7 @@ jobs:
                   ./gradlew :app:assembleDebugAndroidTest
       - run:
            name: Store Google Service Account
-           ommand: echo $GCLOUD_SERVICE_KEY
+           command: echo $GCLOUD_SERVICE_KEY
            command: echo $GCLOUD_SERVICE_KEY > ${HOME}/google-services.json
       - run:
             name: Authorize gcloud and set config defaults
@@ -37,7 +37,9 @@ jobs:
               sudo gcloud  config set project "emulator-5cbfd"
       - run:
             name: Creating directory to store test results
-            command: sudo mkdir firebase
+            command: |
+              cd code
+              mkdir firebase
       - run:
           name: Test with Firebase Test Lab
           command: sudo gcloud firebase test android run --type instrumentation --app app/build/outputs/apk/debug/app-debug.apk --test app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk --device model=Pixel2,version=27,locale=en,orientation=portrait --environment-variables coverage=true,coverageFile=/sdcard/coverage.ec --directories-to-pull=/sdcard --timeout 30m
