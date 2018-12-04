@@ -45,7 +45,7 @@ jobs:
             sudo pip install -U crcmod
             sudo gsutil -m cp -r -U `sudo gsutil ls gs://test-lab-8qiwjmj0wd43k-hr3qdwpzsvya8 | tail -1` ${CIRCLE_ARTIFACTS}/ | true
       - store_artifacts:
-          path: firebase/
+          path: firebase/Pixel2-27-en_GB-portrait
           destination: reports
       - store_test_results:
           path: firebase/Pixel2-27-en_GB-portrait
